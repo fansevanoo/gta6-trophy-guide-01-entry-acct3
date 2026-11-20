@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>The Platinum Vault · GTA VI</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body>
+<a class="skip" href="#content">Skip to collection</a>
+<aside class="sidebar">
+  <a class="brand" href="#" aria-label="Vault home"><span class="brand-mark">♜</span><span>THE PLATINUM<br><strong>VAULT</strong></span></a>
+  <p class="eyebrow">THE LEONIDA COLLECTION</p>
+  <nav aria-label="Vault rooms">
+    <button data-view="Vault" class="active"><span>◈</span> Vault overview <small>01</small></button>
+    <div class="nav-label">THE FOUR HALLS</div>
+    <button data-view="Platinum"><span class="platinum">♜</span> Platinum Hall <small>1</small></button>
+    <button data-view="Gold"><span class="gold">♜</span> Gold Hall <small>2</small></button>
+    <button data-view="Silver"><span class="silver">♜</span> Silver Hall <small>6</small></button>
+    <button data-view="Bronze"><span class="bronze">♜</span> Bronze Hall <small>46</small></button>
+    <div class="nav-label">CURATOR'S DESK</div>
+    <button data-view="Planner"><span>◷</span> Run planner</button>
+    <button data-view="Sources"><span>▤</span> Sources & confidence</button>
+  </nav>
+  <div class="side-bottom"><span class="live-dot"></span> OFFLINE COLLECTION<br><p>Progress stays on this device.</p><div class="save-actions"><button id="export">Export save</button><label class="button" for="import">Import save</label><input type="file" id="import" accept=".json" hidden></div><p class="keys"><kbd>j</kbd> / <kbd>k</kbd> navigate · <kbd>x</kbd> check<br><kbd>/</kbd> search the collection</p><span class="edition">INDEPENDENT FIELD GUIDE · PS5</span></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><span>GRAND THEFT AUTO VI <i>/</i> TROPHY COLLECTION</span><div><button id="share">Copy collection link</button><button id="print">Print checklist ↗</button></div></header>
+  <main id="content" tabindex="-1">
+    <div class="page-heading"><div><p class="eyebrow" id="breadcrumb">PRIVATE COLLECTION / OVERVIEW</p><h1 id="page-title">The Platinum Vault</h1></div><div class="character" role="group" aria-label="Active character"><button id="jason" aria-pressed="true">Jason <b id="jason-count">0</b></button><button id="lucia" aria-pressed="false">Lucia <b id="lucia-count">0</b></button></div></div>
+    <div id="audit" class="audit" aria-label="Collection audit"></div>
+    <div id="view"></div>
+  </main>
+  <footer>THE PLATINUM VAULT <span>Unofficial, independently researched · Research record: 20 Nov 2026 · No affiliation with Rockstar Games</span></footer>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>
