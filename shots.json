@@ -1,0 +1,6 @@
+[
+  {"file":"01-vault-overview.png","path":"/","view":"Vault","cover":true,"viewport":{"width":1280,"height":800}},
+  {"file":"02-hall-tracker.png","path":"/","view":"Silver","viewport":{"width":1280,"height":800}},
+  {"file":"03-exhibit-28.png","path":"/","view":"Bronze","exhibit":28,"viewport":{"width":1280,"height":800}},
+  {"file":"04-sources-confidence.png","path":"/","view":"Sources","viewport":{"width":1280,"height":800}}
+]
