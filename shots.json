@@ -1,6 +1,1 @@
-[
-  {"file":"01-vault-overview.png","path":"/","view":"Vault","cover":true,"viewport":{"width":1280,"height":800}},
-  {"file":"02-hall-tracker.png","path":"/","view":"Silver","viewport":{"width":1280,"height":800}},
-  {"file":"03-exhibit-28.png","path":"/","view":"Bronze","exhibit":28,"viewport":{"width":1280,"height":800}},
-  {"file":"04-sources-confidence.png","path":"/","view":"Sources","viewport":{"width":1280,"height":800}}
-]
+{"format":"jpeg","max_bytes":262144,"quality":80,"seed":{"character":"Jason","earned":{"Jason":[2,3,4,8,16,35],"Lucia":[2,3,8,16,35]},"meditation":{"Jason":5,"Lucia":3},"minutes":60,"revealed":[],"selected":1,"spoilers":false,"version":1,"view":"Tracker"},"shots":[{"file":"1-tracker.jpg","note":"Tracker first: top bar, audit strip, trophy list, cited guide for #1, next-up and sources rails in one frame","selected":1,"view":"Tracker"},{"file":"2-missables.jpg","note":"Missable tier 1 card plus at-risk tiers with points of no return","view":"Missables"},{"file":"3-sources.jpg","note":"18 numbered sources, confidence 47/7/1, D1-D10 disputes with both versions and OUR CALL","view":"Sources"},{"file":"4-journal.jpg","note":"Journal by chapter, 7 chapters with trophy counts","view":"Journal"}],"viewport":{"height":800,"width":1280}}

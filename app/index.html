@@ -1,32 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>The Platinum Vault · GTA VI</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Platinum Vault — an offline tracker, roadmap and cited guide for all 55 GTA VI PS5 trophies.">
+<title>The Platinum Vault — GTA VI Trophy Ledger</title>
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<a class="skip" href="#content">Skip to collection</a>
-<aside class="sidebar">
-  <a class="brand" href="#" aria-label="Vault home"><span class="brand-mark">♜</span><span>THE PLATINUM<br><strong>VAULT</strong></span></a>
-  <p class="eyebrow">THE LEONIDA COLLECTION</p>
-  <nav aria-label="Vault rooms">
-    <button data-view="Vault" class="active"><span>◈</span> Vault overview <small>01</small></button>
-    <div class="nav-label">THE FOUR HALLS</div>
-    <button data-view="Platinum"><span class="platinum">♜</span> Platinum Hall <small>1</small></button>
-    <button data-view="Gold"><span class="gold">♜</span> Gold Hall <small>2</small></button>
-    <button data-view="Silver"><span class="silver">♜</span> Silver Hall <small>6</small></button>
-    <button data-view="Bronze"><span class="bronze">♜</span> Bronze Hall <small>46</small></button>
-    <div class="nav-label">CURATOR'S DESK</div>
-    <button data-view="Planner"><span>◷</span> Run planner</button>
-    <button data-view="Sources"><span>▤</span> Sources & confidence</button>
-  </nav>
-  <div class="side-bottom"><span class="live-dot"></span> OFFLINE COLLECTION<br><p>Progress stays on this device.</p><div class="save-actions"><button id="export">Export save</button><label class="button" for="import">Import save</label><input type="file" id="import" accept=".json" hidden></div><p class="keys"><kbd>j</kbd> / <kbd>k</kbd> navigate · <kbd>x</kbd> check<br><kbd>/</kbd> search the collection</p><span class="edition">INDEPENDENT FIELD GUIDE · PS5</span></div>
-</aside>
-<div class="workspace">
-  <header class="topbar"><span>GRAND THEFT AUTO VI <i>/</i> TROPHY COLLECTION</span><div><button id="share">Copy collection link</button><button id="print">Print checklist ↗</button></div></header>
-  <main id="content" tabindex="-1">
-    <div class="page-heading"><div><p class="eyebrow" id="breadcrumb">PRIVATE COLLECTION / OVERVIEW</p><h1 id="page-title">The Platinum Vault</h1></div><div class="character" role="group" aria-label="Active character"><button id="jason" aria-pressed="true">Jason <b id="jason-count">0</b></button><button id="lucia" aria-pressed="false">Lucia <b id="lucia-count">0</b></button></div></div>
-    <div id="audit" class="audit" aria-label="Collection audit"></div>
-    <div id="view"></div>
-  </main>
-  <footer>THE PLATINUM VAULT <span>Unofficial, independently researched · Research record: 20 Nov 2026 · No affiliation with Rockstar Games</span></footer>
-</div>
-<div id="toast" role="status" aria-live="polite"></div>
-</body></html>
+<header class="topbar">
+  <div class="brand">
+    <h1>The Platinum Vault</h1>
+    <p class="tagline">A 55-trophy vault ledger — every step cited, every dispute shown both ways.</p>
+    <p class="edition">VAULT EDITION · 20 NOV 2026 · GRAND THEFT AUTO VI — PS5</p>
+  </div>
+  <div class="progress-block">
+    <svg class="ring" viewBox="0 0 120 120" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" aria-label="Trophies earned">
+      <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fg" cx="60" cy="60" r="52"></circle>
+      <text class="ring-text" x="60" y="66" text-anchor="middle">0/55</text>
+    </svg>
+    <div class="counts">
+      <p><strong id="earned-count">0 / 55 earned</strong> · <span id="grade-counts">P 0 · G 0 · S 0 · B 0</span></p>
+      <p><span id="jason-count">0/55</span> Jason · <span id="lucia-count">0/55</span> Lucia</p>
+      <p><span id="collectibles-count">Collectibles 0/4 logged</span> · <span id="hours-remaining">200 h remaining (estimate)</span></p>
+      <div class="char-toggle" role="group" aria-label="Active character">
+        <button id="jason" type="button" aria-pressed="true">Jason</button>
+        <button id="lucia" type="button" aria-pressed="false">Lucia</button>
+      </div>
+    </div>
+    <div class="actions">
+      <label class="spoiler-label"><input type="checkbox" id="spoilers"> Spoiler shield off</label>
+      <div class="buttons">
+        <button id="export" type="button">Export</button>
+        <label class="import-label" for="import">Import</label>
+        <input type="file" id="import" accept="application/json" hidden>
+        <button id="share" type="button">Copy link</button>
+        <button id="print-btn" type="button">Print checklist</button>
+      </div>
+      <p class="saved">✓ SAVED IN THIS BROWSER</p>
+    </div>
+  </div>
+</header>
+<div id="audit" class="audit" aria-label="Audit strip"></div>
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="Tracker" aria-pressed="true">Tracker</button>
+  <button type="button" data-view="Roadmap" aria-pressed="false">Roadmap</button>
+  <button type="button" data-view="Missables" aria-pressed="false">Missables</button>
+  <button type="button" data-view="Journal" aria-pressed="false">Journal</button>
+  <button type="button" data-view="Planner" aria-pressed="false">Planner</button>
+  <button type="button" data-view="Sources" aria-pressed="false">Sources</button>
+</nav>
+<p class="hint">Keyboard: <kbd>j</kbd>/<kbd>k</kbd> move between trophies · <kbd>x</kbd> mark earned · <kbd>/</kbd> search. Progress saves in this browser only.</p>
+<main>
+  <section data-panel="Tracker">
+    <h2 id="page-title">Tracker — all 55 trophies</h2>
+    <div class="filters">
+      <input type="search" id="search" placeholder="Search trophy names…  ( / )" aria-label="Search trophies">
+      <select id="kind-filter" aria-label="Filter by kind"><option value="All">Kind: All</option><option value="Story">Story</option><option value="Missable">Missable</option><option value="Collectibles">Collectibles</option><option value="Activities">Activities</option><option value="Online">Online</option><option value="Other">Other</option></select>
+      <select id="grade-filter" aria-label="Filter by grade"><option value="All">Grade: All</option><option value="Platinum">Platinum</option><option value="Gold">Gold</option><option value="Silver">Silver</option><option value="Bronze">Bronze</option></select>
+      <select id="chapter-filter" aria-label="Filter by chapter"><option value="All">Chapter: All</option><option value="1">Chapter 1</option><option value="2">Chapter 2</option><option value="3">Chapter 3</option><option value="4">Chapter 4</option><option value="5">Chapter 5</option><option value="6">Chapter 6</option><option value="7">Chapter 7</option></select>
+      <select id="confidence-filter" aria-label="Filter by confidence"><option value="All">Confidence: All</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select>
+      <select id="character-filter" aria-label="Filter by character"><option value="All">Character: All</option><option value="Jason">Jason</option><option value="Lucia">Lucia</option><option value="Both">Both</option></select>
+      <button id="clear-filters" type="button">Clear filters</button>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Quick filters"></div>
+    <div class="tracker-grid">
+      <div class="trophy-list" id="trophy-list" role="list"></div>
+      <article class="guide-panel" id="detail" aria-label="Selected trophy guide"></article>
+      <aside class="rail">
+        <section class="nextup"><h3>NEXT UP · ROADMAP ORDER</h3><ol id="nextup"></ol></section>
+        <section class="rail-sources"><h3>SOURCES FOR THIS GUIDE</h3><ol id="rail-sources"></ol></section>
+      </aside>
+    </div>
+  </section>
+  <section data-panel="Roadmap" hidden>
+    <h2>Roadmap</h2>
+    <div id="roadmap"></div>
+  </section>
+  <section data-panel="Missables" hidden>
+    <h2>Missables &amp; at-risk</h2>
+    <div id="missables"></div>
+  </section>
+  <section data-panel="Journal" hidden>
+    <h2>Journal — by chapter</h2>
+    <div id="journal"></div>
+  </section>
+  <section data-panel="Planner" hidden>
+    <h2>Session planner</h2>
+    <div class="planner-controls">
+      <button type="button" data-minutes="30" aria-pressed="false">30 min</button>
+      <button type="button" data-minutes="60" aria-pressed="true">60 min</button>
+      <button type="button" data-minutes="120" aria-pressed="false">120 min</button>
+    </div>
+    <div id="plan"></div>
+  </section>
+  <section data-panel="Sources" hidden>
+    <h2>Sources &amp; confidence</h2>
+    <div id="sources-view"></div>
+  </section>
+  <section id="print-checklist" class="print-checklist">
+    <h2>Printable checklist — The Platinum Vault</h2>
+    <ol id="checklist"></ol>
+  </section>
+</main>
+<footer><p>Unofficial fan-made ledger. Trophy names, descriptions and grades are quoted from the official PS5 trophy list; guidance is paraphrased in our own words and cited per step. Sources read 20 Nov 2026.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
